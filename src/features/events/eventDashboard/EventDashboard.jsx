@@ -16,6 +16,16 @@ const EventDashboard = ({
     setEvents([...events, event]);
   };
 
+  const handleUpdateEvents = (updatedEvent) => {
+    setEvents(
+      events.map((event) =>
+        event.id === updatedEvent.id ? updatedEvent : event
+      )
+    );
+    selectEvent(null);
+    setFormOpen(false);
+  };
+
   return (
     <Grid>
       <Grid.Column width={10}>
@@ -28,6 +38,8 @@ const EventDashboard = ({
             setEvents={setEvents}
             createEvent={handleCreateEvent}
             selectedEvent={selectedEvent}
+            key={selectedEvent ? selectedEvent.id : null}
+            updateEvent={handleUpdateEvents}
           />
         )}
       </Grid.Column>
