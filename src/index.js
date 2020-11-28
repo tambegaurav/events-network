@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./app/layout/App";
 import reportWebVitals from "./reportWebVitals";
 import "./app/layout/styles.css";
+import "semantic-ui-css/semantic.min.css";
 
 const rootEl = document.getElementById("root");
 
